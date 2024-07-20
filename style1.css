@@ -1,0 +1,956 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    
+    font-family: 'Lora', serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #004d00; 
+}
+
+header {
+    position:fixed;
+    width: 100%;
+    background-color:#fff;
+    color: #006400;
+    padding: 8px 0;
+    z-index: 1000;
+    border-bottom: 3px solid #0c500c;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 10px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+h1 {
+    margin: 0;
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 30px;
+}
+
+.nav-links a {
+    color:#006400;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+.image-overlay {
+    position: absolute;
+    top: 49%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    text-align:left;
+    z-index: 2;
+}
+
+/* Additional styling for the text over the image */
+.image-overlay p {
+    position: relative;
+    color: white; 
+    font-size: 45px; 
+    font-weight: bold; /* Font weight */
+    line-height:1.5 ;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow */
+    opacity: 0; /* Initial opacity set to 0 for the fade-in effect */
+    animation: slideInUp 2s ease-in forwards; /* Animation settings */
+}
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image {
+    margin:20px 0px;
+    width: 100%; /* Adjust the width as needed */
+    height:10%; /* Maintain aspect ratio */
+    border-bottom: 3px solid #0c500c;
+   
+}
+.name{
+    font-size: 55px;
+    color:#0c500cf7;
+    font-family: 'Montserrat', sans-serif
+}
+
+.content {
+    padding: 20px;
+    margin: 20px 40px 10px 40px;
+    /* background-color:#cde7cd; */
+   
+    position: relative;
+}
+
+.qualifications-title{
+    text-align:left ;
+    font-size: 36px;
+    margin: 30px 0 20px 100px;
+    color: #006400;
+}
+.courses-title{
+    text-align:right;
+    font-size: 36px;
+    margin: 40px 0 30px 100px;
+    color: #006400;
+   
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.left-box {
+    background-color: #e0f5e0;
+    border-radius: 10px;
+    padding: 40px ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    height: 50%;
+    width: 35%;
+}
+.right-box{
+    background-color: #e0f5e0;
+    border-radius: 10px;
+    padding: 40px ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width:100%;
+    height:70%;
+    text-align:left;
+
+}
+.text{
+    font-size: 20px;
+    font-weight: 100;
+
+}
+.box p{
+    font-size: 15px;
+    line-height: 1.9;
+}
+.right-section {
+    margin-top: 160px;
+    width:35%;
+    
+}
+.plant{
+   position:absolute;
+    top: 400px;
+    left:20px;
+    width: 25vw;
+    height:40%;
+    border-left: 3px solid #0c500c;
+
+}
+
+.tree{
+    position:absolute;
+     top:0px;
+     right:0px;
+     width: 30vw;
+     height:45%;
+     border-right: 3px solid #0c500c;
+     
+ }
+
+
+.skills-content {
+    padding: 20px;
+    margin: 40px 40px 10px 40px;
+
+    position: relative;
+    background-color: rgb(224, 245, 224);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.skills-title {
+    text-align:left;
+    font-size: 36px;
+    margin:20px 40px 20px 40px;
+    color: #006400;
+    border-bottom: double 3px #006400   ; 
+}
+
+.skills-sections {
+    display: flex;
+    flex-direction: column;
+   
+}
+/* Define the fade-in-left animation */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.section {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 40px;
+    text-align: center;
+    opacity: 0; 
+    transition: opacity 1s, transform 1s; 
+}
+
+.section.visible {
+    opacity: 1; 
+    transform: translateX(0); 
+}
+
+
+.technical-skills {
+    align-self: flex-end;
+    width: 45%;
+    margin-right: 40px;
+    border-left: solid 5px #006400;
+    border-right: solid 5px #006400;
+    transform: translateX(-100%); 
+    animation-delay: 0s;
+}
+
+.soft-skills {
+    align-self: center;
+    width: 45%;
+    border-left: solid 5px #006400;
+    border-right: solid 5px #006400;
+    transform: translateX(-100%); 
+    animation-delay: 0.5s;
+}
+
+.hobbies {
+    align-self: flex-start;
+    border-left: solid 5px #006400;
+    border-right: solid 5px #006400;
+    width: 45%;
+    transform: translateX(-100%); 
+    animation-delay: 1s;
+}
+
+
+
+h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #0c500c;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+#projects {
+    /* background-color: #f9f9f9; */
+    padding: 40px 0;
+}
+
+.projects-title {
+    margin:20px 60px;
+    font-size: 36px;
+    color: #006400;
+    border-bottom: double 3px #006400   ; 
+}
+
+
+  .container1 p {
+    font-size: 20px;
+    text-align:left;
+    margin-top: 150px;
+    margin-left: 20px;
+    color: #555;
+  }
+
+.container1{
+    margin:20px 60px;
+    width: 90%;
+    display: flex;
+    flex:1;
+    
+}
+
+.carousel-container {
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    white-space: nowrap; 
+   margin-left: 130px;
+   border-right:solid 3px #006400;
+
+   
+
+}
+
+.carousel {
+    display: flex;
+    justify-content: flex-start;
+    margin:20px 40px; 
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    transition: transform 0.5s ease;
+    margin-right: 20px; 
+    max-width: 180px;
+    
+}
+
+.big {
+    flex-basis: 90%;
+}
+
+
+.carousel-item img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper rendering */
+}
+
+/* Adjustments for smoother transition */
+.carousel-item:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.project-thumbnail {
+    margin: 20px 40px;
+  }
+  
+  .project-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .project-content {
+    display: flex;
+    align-items: center;
+    border-left:solid 3px #006400;  
+
+  }
+  .image-container{
+    position: relative;
+  }
+  
+  .image-container1 {
+    position: relative;
+
+  }
+  
+  .project-image {
+    margin-left: 20px;
+    width: 700px;
+    height: auto;
+    display: block;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .image-container1:hover .overlay {
+    opacity: 1;
+  }
+  
+  .project-text {
+    margin-left: 70px;
+    text-align:justify;
+    max-width: 500px;
+  }
+  
+  .project-text h2 {
+    margin: 0 0 10px;
+    font-size: 25px;
+  }
+  
+  .project-text p {
+    margin: 0;
+    color: #555;
+    font-size: 20px;
+  }
+
+/* Contact Section */
+ 
+
+footer {
+
+    background-color: rgba(0, 100, 0, 0.9); 
+    margin-top: 40px;
+    padding: 50px 20px; 
+    color: #fff; 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+}
+
+.contact-container {
+    max-width: 600px; 
+      margin: 0 auto; 
+}
+
+.contact-container h2 {
+    font-size: 24px; 
+    margin-bottom: 20px; 
+    color: #00ff00;
+}
+
+.social-links .social-icon {
+    color: #00ff00; 
+    font-size: 24px; 
+    margin: 0 10px; 
+    transition: color 0.3s ease;
+}
+
+.social-links .social-icon:hover {
+    color: #00ffff; 
+}
+
+
+@media screen and (max-width: 725px) {
+    header{
+        width: 425px;
+    }
+    .nav-links a{
+        font-size: 15px;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center; 
+        padding: 10px;
+    }
+    ul li{
+        line-height: 1.1;
+    }
+    .nav-links {
+        margin-top: 10px; /* Add margin between nav items */
+    }
+    .image{
+        width:425px;
+        height: 300px;
+    }
+    .image-overlay {
+        top: 40%; /* Adjust position */
+        left: 30%; /* Center horizontally */
+    }
+ 
+    .content{
+        margin: 20px; /* Adjust margin */
+        padding: 20px;
+    }
+    .skills-content {
+       padding: 40px;
+        margin: 20px 20px;
+    }
+    .boxes {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center items horizontally */
+    }
+    .box p{
+        font-size: 13px;
+    }
+    .text{
+        font-size: 17px;
+    }
+    .right-section{
+        margin:30px 0;
+    }
+    .left-box{
+        width: 70%; /* Full width for boxes */
+        margin-top: 0;
+        padding: 30px;
+    }
+    .right-box{
+        width: 55vw;
+        padding:30px;
+
+       /* Full width for boxes */
+    }
+    
+    .project-image {
+        width: 100%; /* Make project images fill container */
+    }
+    
+    .overlay {
+        font-size: 18px; /* Adjust font size */
+    }
+
+    .image-overlay p {
+        margin-top:180px;
+        font-size: 4vw; /* Decrease font size for smaller screens */
+        line-height: 1.3; /* Adjust line height */
+        
+    }
+    .name{
+        font-size: 5vw;
+        color:#e0f5e0;
+    }
+
+    .plant{
+        height:23vw;
+        margin-top:0px;
+        width:27vw;
+        left:-19px;
+    }
+
+    .tree{
+        height:22vw;
+        right:-19px;
+    }
+   
+    .qualifications-title,.courses-title{
+        font-size: 25px;
+    }
+    .qualifications-title{
+        margin: 20px 0 20px 40px;
+    }
+    .courses-title{
+        width: 200px;
+        margin:30px 0 30px 10px;
+    }
+
+    .skills-title{
+        font-size: 25px;
+        margin:20px 40px 20px 20px;
+    }
+    .technical-skills{
+        width: 70%;
+        margin: 20px 0;
+       }
+       h3{
+        font-size: 17px;
+       }
+
+    .soft-skills{
+        width: 70%;
+        margin: 20px 0;
+       }
+     
+    .hobbies{
+        width: 70%;
+        margin: 20px 0;
+       }
+    #projects{
+        padding:20px;
+       }
+    .projects-title{
+        font-size: 25px;
+        margin:0 40px 20px 40px;
+       }
+    .container1{
+        margin:20px 60px 20px 20px;
+       }
+    .container1 p{
+        font-size: 17px;
+        margin-top: 100px;
+        margin-left: 0;
+       }
+    .carousel-container{
+        height: 345px;
+        margin: 0;
+        width:425px;
+       }
+    .carousel-item img{
+        height:300px;
+        width: 170px;
+      }
+    .project-text{
+        margin-left: 20px;
+        width: 110px;
+       }
+    .project-text h2{
+        font-size: 20px;
+      }
+    .project-text p{
+        font-size: 15px;
+      }
+    .contact-container h2{
+        font-size: 20px;
+      }
+    .contact-container p{
+        font-size: 15px;
+      }
+    .image-container1{
+        height:100px;
+      }
+    .project-content{
+        width:350px;
+      }
+    .project-image{
+        height: 100px;
+        margin-left: 0;
+        width:50vw;
+      }
+        
+}
+
+
+@media screen and (max-width: 400px){
+
+    header{
+        width: 375px;
+    }
+    .container{
+        max-width: 375px;
+        margin:0 20px;
+    }
+    .icon{
+        width:40px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .nav-links a{
+        font-size: 12px;
+    }
+    .nav-links li{
+        margin:0 10px;
+    }
+    .image-container{
+        width:auto;
+       
+    }
+    .image {
+        margin:40px 0 20px 0 ;
+       width: 375px;
+       height: 200px;
+    }
+    .image-overlay p{
+        font-size: 4vw;
+        margin-top: 120px;
+    }
+    .name{
+        font-size: 4vw;
+    }
+    .tree{
+        height:20vw;
+    }
+    .qualifications-title{
+        font-size: 20px;
+        margin:0 ;
+    }
+    .left-box{
+        padding:20px;
+        width: 70%;
+        margin-top: 30px;
+       
+    }
+    .left-box p{
+        font-size: 10px;
+    }
+    .text{
+        font-size: 15px;
+    }
+    .plant{
+        height:20vw;
+        margin-top:0px;
+        width:25vw;
+        left:-19px;
+        top:320px;
+    }
+    .right-section{
+        margin-top: 20px;
+    }
+    .courses-title{
+        font-size: 20px;
+        margin:20px 0;
+        width:170px;
+    }
+   .right-box{
+    padding: 20px;
+    width: 200px;
+   }
+   .skills-title{
+    font-size: 20px;
+    margin:20px 40px 20px 20px;
+   }
+   .technical-skills{
+    width: 70%;
+    margin: 20px 0;
+   }
+   h3{
+    font-size: 17px;
+   }
+   ul li{
+    font-size: 15px;
+   }
+   .soft-skills{
+    width: 70%;
+    margin: 20px 0;
+   }
+   .hobbies{
+    width: 70%;
+    margin: 20px 0;
+   }
+
+   #projects{
+    padding:20px 0;
+   }
+   .projects-title{
+    font-size: 20px;
+    margin:0 40px 20px 40px;
+   }
+   .container1{
+    margin:20px 40px;
+    width: 300px;
+   }
+   .container1 p{
+    font-size: 15px;
+    margin-top: 100px;
+    margin-left: 0;
+   }
+   .carousel-container{
+    height: 300px;
+   }
+  .carousel-item img{
+    height:300px;
+    width: 170px;
+  }
+   .project-text{
+    margin-left: 10px;
+   }
+  .project-text h2{
+    font-size: 17px;
+  }
+  .project-text p{
+    font-size: 15px;
+  }
+  .contact-container h2{
+    font-size: 20px;
+  }
+  .contact-container p{
+    font-size: 15px;
+  }
+  .image-container1{
+    height:100px;
+  }
+  .project-content{
+    width:250px;
+  }
+  .project-image{
+    height: 100px;
+    margin-left: 0;
+    width:50vw;
+  }
+    
+        
+
+}
+@media screen and (max-width: 320px){ 
+
+    header{
+        width:320px;
+    }
+   h1{
+    font-size: 20px;
+   }
+    .container{
+        width:320px;
+        margin: 0 0;
+     }
+    .image{
+        margin: 40px 0 20px 0;
+        width: 100%;
+        height: 200px;
+    }
+    .image-overlay p{
+        margin-top: 120px;
+        font-size: 4vw;
+    }
+    .image-container{
+       width:320px;
+    }
+    .content{
+        margin-top: 0;
+    }
+    .qualifications-title{
+        font-size: 20px;
+        margin:0;
+    }
+    .tree{
+        right: -19px;
+    }
+    .plant{
+        margin-top: 0;
+        top: 280px;
+        left:-19px;
+    }
+    .boxes{
+        margin: 0;
+    }
+    .left-box {
+        padding: 20px;
+        width:70%;
+    }
+
+    .right-box{
+        padding: 25px;
+        width:55vw;
+    }
+    .courses-title{
+        margin:20px 0 ;
+        font-size: 20px;
+       width:170px;
+       
+    }
+    .text{
+       font-size: 12px;
+    }
+   .skills-title{
+    font-size: 20px;
+    margin:20px 40px 20px 20px;
+   }
+   .skills-content{
+    padding: 20px;
+   }
+   .technical-skills{
+    width: 70%;
+    margin: 20px 0;
+   }
+   h3{
+    font-size: 15px;
+   }
+   ul li{
+    font-size: 12px;
+   }
+   .soft-skills{
+    width: 70%;
+    margin: 20px 0;
+   }
+   .hobbies{
+    width: 70%;
+    margin: 20px 0;
+   }
+
+   #projects{
+    padding:20px;
+
+   }
+   .projects-title{
+    font-size: 20px;
+    margin:0 40px 20px 40px;
+   }
+   .container1{
+    margin:20px;
+    width: 250px;
+   }
+   .container1 p{
+    font-size: 12px;
+    margin-top: 100px;
+    margin-left: 0;
+   }
+   .carousel-container{
+    height: 350px;
+   }
+   /* .project-content{
+    width: 250px;
+   } */
+   .project-text{
+    margin-left: 10px;
+   }
+  .project-text h2{
+    font-size: 15px;
+  }
+  .project-text p{
+    font-size: 12px;
+  }
+  .contact-container h2{
+    font-size: 20px;
+  }
+  .contact-container p{
+    font-size: 15px;
+  }
+  .image-container1{
+    height:100px;
+  }
+  .project-content{
+    width:250px;
+  }
+  .project-image{
+    height: 100px;
+    margin-left: 0;
+    width:50vw;
+  }
+}
+
+
+
+
+
+
+
